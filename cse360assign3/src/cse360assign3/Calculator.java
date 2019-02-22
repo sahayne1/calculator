@@ -6,7 +6,7 @@ perform operations of addition, subtraction, multiplication
 and division.*/
 
 package cse360assign3;
-
+import java.util.ArrayList;
 /**
 * calculator --- program to create calculator
 * with operations and history.
@@ -15,6 +15,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private static ArrayList<String> calcArray = new ArrayList<String>();
 	/**
 	* Constructor for class Calculator
 	*/
@@ -31,19 +32,19 @@ public class Calculator {
 	* Adds the parameter to the total variable
 	*/
 	public void add (int value) {
-		
+		total = total + value;
 	}
 	/**
 	* Subtracts the parameter from the total variable.
 	*/
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	/**
 	*Multiplies the total by the parameter.
 	*/
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	/**
 	*Divides the total by the parameter.
@@ -51,7 +52,7 @@ public class Calculator {
 	*No error will be printed or exception provided.
 	*/
 	public void divide (int value) {
-		
+		total = total / value;
 	}
 	/**
 	* History starts at zero to last.input
