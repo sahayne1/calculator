@@ -3,7 +3,9 @@ Class ID: 401
 Assignment: 2
 Description: Program to provide a calculator function to
 perform operations of addition, subtraction, multiplication
-and division.*/
+and division.
+GitHub URL:  https://github.com/sahayne1/calculator
+*/
 
 package cse360assign3;
 import java.util.ArrayList;
