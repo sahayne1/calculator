@@ -21,30 +21,37 @@ public class Calculator {
 	*/
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		calcArray.add("0");
 	}
 	/**
 	* Obtains total of all parameters.
 	*/
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	/**
 	* Adds the parameter to the total variable
 	*/
 	public void add (int value) {
 		total = total + value;
+		calcArray.add(" add ");
+		calcArray.add(value + " ");
 	}
 	/**
 	* Subtracts the parameter from the total variable.
 	*/
 	public void subtract (int value) {
 		total = total - value;
+		calcArray.add(" subtract ");
+		calcArray.add(value + " ");
 	}
 	/**
 	*Multiplies the total by the parameter.
 	*/
 	public void multiply (int value) {
 		total = total * value;
+		calcArray.add(" multiply ");
+		calcArray.add(value + " ");
 	}
 	/**
 	*Divides the total by the parameter.
@@ -53,6 +60,8 @@ public class Calculator {
 	*/
 	public void divide (int value) {
 		total = total / value;
+		calcArray.add(" divide ");
+		calcArray.add(value + " ");
 	}
 	/**
 	* History starts at zero to last.input
@@ -60,6 +69,19 @@ public class Calculator {
 	* to string and ensures spaces between
 	* inputs and operators.*/
 	public String getHistory () {
-		return "";
+		String entry = "";
+		for(int position = 0; position < calcArray.size(); position++)
+			if (calcArray.get(position) == " add ") {
+				entry = entry + " + ";
+			} else if (calcArray.get(position) == " subtract ") {
+				entry = entry + " - ";
+			} else if (calcArray.get(position) == " multiply ") {
+				entry = entry + " * ";
+			} else if (calcArray.get(position) == " divide ") {
+				entry = entry + " / ";
+			} else {
+					entry = entry + calcArray.get(position);
+			}
+		return entry;
 	}
 }
